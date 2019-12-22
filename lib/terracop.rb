@@ -33,8 +33,17 @@ module Terracop
 
   class << self
     def config
-      defaults_path = File.join(__dir__, '../default_config.yml')
-      @config ||= YAML.safe_load(File.read(defaults_path)) || {}
+      @config ||= begin
+        defaults_path = File.join(__dir__, '../default_config.yml')
+        overrides_path = '.terracop.yml'
+
+        config = YAML.safe_load(File.read(defaults_path)) || {}
+        if File.exist?(overrides_path)
+          config.merge!(YAML.safe_load(File.read(overrides_path)) || {})
+        end
+
+        config
+      end
     end
   end
 end

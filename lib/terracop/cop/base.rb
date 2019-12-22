@@ -35,7 +35,9 @@ module Terracop
         end
 
         def config
-          Terracop.config[cop_name] || { 'Enabled' => true }
+          config = Terracop.config[cop_name] || {}
+          config['Enabled'] = config['Enabled'].nil? ? true : config['Enabled']
+          config
         end
 
         protected

@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.version       = Terracop::VERSION
   spec.authors       = ['Francesco Boffa']
   spec.email         = ['fra.boffa@gmail.com']
+  spec.license       = 'MIT'
 
   spec.summary       = 'Automatic Terraform state/plan checking tool'
   spec.description   = <<-DESCRIPTION
