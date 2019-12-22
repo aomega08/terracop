@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    terracop (0.1.0)
+    terracop (0.1.1)
       colorize (~> 0.8)
 
 GEM

@@ -25,6 +25,8 @@ module Terracop
 
       by_res = offenses.flatten.group_by { |o| "#{o[:type]}.#{o[:name]}" }
       print @formatter.generate(by_res)
+
+      offenses.flatten.count
     end
 
     private

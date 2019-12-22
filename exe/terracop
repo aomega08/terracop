@@ -49,4 +49,5 @@ if state && plan
   exit
 end
 
-Terracop::Runner.new(type, state || plan, formatter).run
+result = Terracop::Runner.new(type, state || plan, formatter).run
+exit result
