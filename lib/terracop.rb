@@ -32,7 +32,7 @@ module Terracop
   class << self
     def config
       defaults_path = File.join(__dir__, '../default_config.yml')
-      @config ||= YAML.safe_load(File.read(defaults_path))
+      @config ||= YAML.safe_load(File.read(defaults_path)) || {}
     end
   end
 end
