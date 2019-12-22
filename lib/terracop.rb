@@ -22,7 +22,9 @@ require 'terracop/formatters/default'
 require 'terracop/formatters/html'
 require 'terracop/formatters/json'
 
+require 'terracop/plan_loader'
 require 'terracop/runner'
+require 'terracop/state_loader'
 require 'terracop/version'
 
 # Wrapper module for the gem.

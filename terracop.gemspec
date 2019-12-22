@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
     Aims to enforce best practices for Terraform and "the cloud".
   DESCRIPTION
 
-  spec.homepage      = 'https://github.com/aomega08/terracop'
+  spec.homepage = 'https://github.com/aomega08/terracop'
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = spec.homepage
