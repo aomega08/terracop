@@ -1,0 +1,14 @@
+require:
+  - rubocop-rspec
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+    - terracop.gemspec
+
+Style/AsciiComments:
+  # I will use emojis!
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 7

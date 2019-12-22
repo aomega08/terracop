@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+$LOAD_PATH.unshift(File.expand_path('../lib', __dir__))
+
+require 'bundler/setup'
+require 'optparse'
+require 'terracop'
+
+formatter = :default
+state = nil
+plan = nil
+type = :state
+
+OptionParser.new do |opts|
+  opts.banner += ' <state_file.json>'
+
+  opts.on(
+    '-f', '--format FORMAT', /(default|html|json)/,
+    'Use a specific formatter for the output'
+  ) do |arg|
+    formatter = arg[0].to_sym
+  end
+
+  opts.on('-s', '--state FILE', 'Specify the state file to analyze') do |arg|
+    state = arg
+  end
+
+  opts.on('-p', '--plan FILE', 'Specify the terraform plan to analyze') do |arg|
+    plan = arg
+    type = :plan
+  end
+
+  opts.on_tail('-h', '--help', 'Prints this help') do
+    puts opts
+    exit
+  end
+
+  opts.on_tail('-v', '--version', 'Show version') do
+    puts Terracop::VERSION
+    exit
+  end
+
+  opts.parse!
+end
+
+if state && plan
+  puts 'You can analyze either a state or a plan, but not both.'
+  exit
+end
+
+Terracop::Runner.new(type, state || plan, formatter).run
