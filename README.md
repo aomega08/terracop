@@ -1,8 +1,9 @@
 # Terracop
 
-Terracop is a HashiCorp [Terraform](https://www.terraform.io/) state / plan
-parser and analyzer. Put it in a CI pipeline to analyze your Terraform plans
-or run it on already applied states and see what could be improved.
+Terracop is an opinionated HashiCorp [Terraform](https://www.terraform.io/)
+state / plan parser and analyzer. Put it in a CI pipeline to analyze your
+Terraform plans or run it on already applied states and see what could be
+improved.
 
 The checks run by Terracop go anywhere from resource names guidelines to
 identifying security holes in your configuration.
@@ -33,8 +34,8 @@ like this:
 
     $ terracop --state path/to/state/file
 
-Terracop can (will) parse also terraform plan files, in order to report
-potential issues before you apply the plan and make the problem permanent. Eg:
+Terracop can also parse terraform plan files, in order to report potential
+issues before you apply the plan and persist the problem. Eg:
 
     $ terraform plan -out tfplan
     $ terracop --plan tfplan
