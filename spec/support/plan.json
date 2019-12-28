@@ -1,0 +1,169 @@
+{
+  "format_version": "0.1",
+  "terraform_version": "0.12.16",
+  "variables": {},
+  "planned_values": {
+    "root_module": {
+      "resources": ["emptied for spec purposes"]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "aws_iam_user.users[\"john.smith\"]",
+      "mode": "managed",
+      "type": "aws_iam_user",
+      "name": "users",
+      "index": "john.smith",
+      "provider_name": "aws",
+      "change": {
+        "actions": [
+          "delete"
+        ],
+        "before": {
+          "arn": "arn:aws:iam::000111222333:user/john.smith",
+          "force_destroy": false,
+          "id": "john.smith",
+          "name": "john.smith",
+          "path": "/",
+          "permissions_boundary": null,
+          "tags": {
+            "Email": "john.smith@email.com"
+          },
+          "unique_id": "AAAAAAAAAAAAAAAAAAAAA"
+        },
+        "after": null,
+        "after_unknown": {}
+      }
+    },
+    {
+      "address": "aws_iam_user.users[\"joe.schmo\"]",
+      "mode": "managed",
+      "type": "aws_iam_user",
+      "name": "users",
+      "index": "joe.schmo",
+      "provider_name": "aws",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "arn": "arn:aws:iam::000111222333:user/joe.schmo",
+          "force_destroy": false,
+          "id": "joe.schmo",
+          "name": "joe.schmo",
+          "path": "/",
+          "permissions_boundary": null,
+          "tags": {
+          },
+          "unique_id": "AAAAAAAAAAAAAAAAAAAAA"
+        },
+        "after": {
+          "arn": "arn:aws:iam::000111222333:user/joe.schmo",
+          "force_destroy": false,
+          "id": "joe.schmo",
+          "name": "joe.schmo",
+          "path": "/",
+          "permissions_boundary": null,
+          "tags": {
+            "Email": "joe.schmo@email.com"
+          },
+          "unique_id": "AAAAAAAAAAAAAAAAAAAAA"
+        },
+        "after_unknown": {}
+      }
+    },
+    {
+      "address": "aws_iam_user.users[\"average.joe\"]",
+      "mode": "managed",
+      "type": "aws_iam_user",
+      "name": "users",
+      "index": "average.joe",
+      "provider_name": "aws",
+      "change": {
+        "actions": [
+          "no-op"
+        ],
+        "before": {
+          "arn": "arn:aws:iam::000111222333:user/average.joe",
+          "force_destroy": false,
+          "id": "average.joe",
+          "name": "average.joe",
+          "path": "/",
+          "permissions_boundary": null,
+          "tags": {
+          },
+          "unique_id": "AAAAAAAAAAAAAAAAAAAAA"
+        },
+        "after": {
+          "arn": "arn:aws:iam::000111222333:user/average.joe",
+          "force_destroy": false,
+          "id": "average.joe",
+          "name": "average.joe",
+          "path": "/",
+          "permissions_boundary": null,
+          "tags": {
+          },
+          "unique_id": "AAAAAAAAAAAAAAAAAAAAA"
+        },
+        "after_unknown": {}
+      }
+    },
+    {
+      "address": "aws_iam_user.users[\"jane.doe\"]",
+      "mode": "managed",
+      "type": "aws_iam_user",
+      "name": "users",
+      "index": "jane.doe",
+      "provider_name": "aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "force_destroy": false,
+          "name": "jane.doe",
+          "path": "/",
+          "permissions_boundary": null,
+          "tags": {
+          }
+        },
+        "after_unknown": {
+          "arn": true,
+          "id": true,
+          "tags": {},
+          "unique_id": "AAAAAAAAAAAAAAAAAAAAA"
+        }
+      }
+    }
+  ],
+  "prior_state": {
+    "format_version": "0.1",
+    "terraform_version": "0.12.16",
+    "values": {
+      "root_module": {
+        "resources": ["emptied for spec purposes"]
+      }
+    }
+  },
+  "configuration": {
+    "provider_config": {
+      "aws": {
+        "name": "aws",
+        "version_constraint": "~> 2.42",
+        "expressions": {
+          "region": {
+            "constant_value": "eu-west-1"
+          }
+        }
+      }
+    },
+    "root_module": {
+      "resources": ["emptied for spec purposes"],
+      "variables": {
+        "attached_policies": {},
+        "users": {}
+      }
+    }
+  }
+}

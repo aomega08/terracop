@@ -13,6 +13,10 @@ Style/AsciiComments:
 RSpec/NestedGroups:
   Max: 7
 
-# Usually good, sometimes dumb.
 Style/GuardClause:
+  # Usually good, sometimes dumb.
+  Enabled: false
+
+RSpec/SubjectStub:
+  # Sometimes, there's no other way.
   Enabled: false

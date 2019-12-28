@@ -1,0 +1,28 @@
+{
+  "version": 4,
+  "terraform_version": "0.12.16",
+  "serial": 1,
+  "lineage": "deadbeef-cafe-cafe-cafe-000000000000",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_iam_group",
+      "name": "my-group",
+      "provider": "provider.aws",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::000111222333:group/my_group",
+            "id": "my_group",
+            "name": "my_group",
+            "path": "/",
+            "unique_id": "AAAAA0AAAAA0AAAAAAAAA"
+          },
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    }
+  ]
+}
