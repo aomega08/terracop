@@ -83,7 +83,7 @@ RSpec.describe Terracop::Runner do
     end
 
     before do
-      expect(Terracop::PlanLoader).to receive(:decode).and_return(plan)
+      allow(Terracop::PlanLoader).to receive(:decode).and_return(plan)
     end
 
     it 'loads the state, ignoring deletes and no-op' do

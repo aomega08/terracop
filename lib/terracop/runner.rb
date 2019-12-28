@@ -18,8 +18,7 @@ module Terracop
         )
       end
 
-      by_res = offenses.flatten.group_by { |o| "#{o[:type]}.#{o[:name]}" }
-      print @formatter.generate(by_res)
+      print formatted(offenses)
 
       offenses.flatten.count
     end
@@ -53,5 +52,10 @@ module Terracop
       exit
     end
     # :nocov:
+
+    def formatted(offenses)
+      by_res = offenses.flatten.group_by { |o| "#{o[:type]}.#{o[:name]}" }
+      @formatter.generate(by_res)
+    end
   end
 end
