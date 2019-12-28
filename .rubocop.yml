@@ -12,3 +12,7 @@ Style/AsciiComments:
 
 RSpec/NestedGroups:
   Max: 7
+
+# Usually good, sometimes dumb.
+Style/GuardClause:
+  Enabled: false
