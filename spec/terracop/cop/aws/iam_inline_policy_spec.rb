@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Terracop::Cop::Aws::IamRolePolicy do
+RSpec.describe Terracop::Cop::Aws::IamInlinePolicy do
   subject(:cop) do
     described_class.new('aws_iam_role_policy', 'inline', nil, {})
   end

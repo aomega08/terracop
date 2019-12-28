@@ -5,7 +5,7 @@ require 'terracop/cop/base'
 module Terracop
   module Cop
     module Aws
-      # This cop warns against the use of inline role policies.
+      # This cop warns against the use of inline group/role/user policies.
       # Inline policies tend to be copy/pasted, sometimes with minor changes
       # and are not shown in the "Policies" tab of AWS IAM.
       #
@@ -33,13 +33,15 @@ module Terracop
       #     role       = aws_iam_role.role.name
       #     policy_arn = aws_iam_policy.policy.arn
       #   }
-      class IamRolePolicy < Base
+      class IamInlinePolicy < Base
         register
-        applies_to :aws_iam_role_policy
+        applies_to :aws_iam_group_policy, :aws_iam_role_policy,
+                   :aws_iam_user_policy
 
         def check
-          offense('Use aws_iam_role_policy_attachment instead of attaching ' \
-                  'inline policies with aws_iam_role_policy.')
+          entity = type.scan(/aws_iam_(.+)_policy/).first.first
+          offense("Use aws_iam_#{entity}_policy_attachment instead of " \
+                  "attaching inline policies with aws_iam_#{entity}_policy.")
         end
       end
     end
