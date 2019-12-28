@@ -51,6 +51,48 @@ RSpec.describe Terracop::Cop::Aws::EnsureTags do
     end
   end
 
+  context 'when the resource is an autoscaling group' do
+    subject(:cop) do
+      described_class.new('aws_autoscaling_group', 'res', nil, attributes)
+    end
+
+    let(:config) { { 'Enabled' => true, 'Required' => ['tag'] } }
+
+    context 'with defined "tag"' do
+      let(:attributes) do
+        {
+          'tag' => [
+            {
+              'key' => 'tag',
+              'value' => 'value'
+            }
+          ]
+        }
+      end
+
+      it 'does not register an offense' do
+        expect_no_offenses
+      end
+    end
+
+    context 'with defined "tags"' do
+      let(:attributes) do
+        {
+          'tags' => [
+            {
+              'key' => 'tag',
+              'value' => 'value'
+            }
+          ]
+        }
+      end
+
+      it 'does not register an offense' do
+        expect_no_offenses
+      end
+    end
+  end
+
   context 'when the resource cannot have tags' do
     let(:attributes) { {} }
 
