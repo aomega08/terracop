@@ -6,7 +6,7 @@ RSpec.describe Terracop::Cop::Aws::FaultIntolerant do
   end
 
   context 'with less than two AZs' do
-    let(:attributes) { { 'availability_zones' => [ 'eu-west-1a'] } }
+    let(:attributes) { { 'availability_zones' => ['eu-west-1a'] } }
 
     it 'registers an offense' do
       expect_offense
@@ -16,7 +16,7 @@ RSpec.describe Terracop::Cop::Aws::FaultIntolerant do
   context 'with more than one AZ' do
     let(:attributes) do
       {
-        'availability_zones' => ['eu-west-1a', 'eu-west-1b']
+        'availability_zones' => %w[eu-west-1a eu-west-1b]
       }
     end
 
